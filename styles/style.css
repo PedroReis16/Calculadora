@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+:root{
+    --LightGray: hsl(0, 0%, 90%);/*(main background)*/
+    --GrayishRed: hsl(0, 5%, 81%);/*(toggle background, keypad background)*/
+    --VeryLightGray: hsl(0, 0%, 93%);/*(screen background)*/
+    --DarkModerateCyan : hsl(185, 42%, 37%);/*(key background)*/
+    --VeryDarkCyan : hsl(185, 58%, 25%);/*(key shadow)*/
+    --Orange : hsl(25, 98%, 40%);/*(key background, toggle)*/
+    --DarkOrange : hsl(25, 99%, 27%);/*(key shadow)*/
+    --LightGrayishYellow : hsl(45, 7%, 89%);/*(key background)*/
+    --DarkGrayishOrange : hsl(35, 11%, 61%);/*(key shadow)*/
+    --VeryDarkGrayishYellow: hsl(60, 10%, 19%);
+    --White: hsl(0, 0%, 100%);
+}
+
+*{
+    background-color: var(--LightGray);    
+}
+body{
+    overflow: hidden;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    margin: 20% 10%;
+}
+#title{
+    font-family: "League Spartan",sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+}
+.viewer{
+    display: flex;
+    background-color: var(--VeryLightGray);
+    height: 80px;
+    margin: 16px 0px;
+    border-radius: 12px; 
+    align-items: center;
+    justify-content: end;
+}
+.viewValue{
+    font-family: "League Spartan",sans-serif;
+    font-size: 40px;
+    padding: 24px 16px 0px 0px;
+    background-color: transparent;
+}
+.keyboard{
+    display: grid;
+    grid-template-areas:
+    "SEVEN EIGHT NINE DEL" 
+    "FOUR FIVE SIX PLUS"
+    "ONE TWO THREE MINUS"
+    "COMA ZEROO DIVIDE MULTIPLE"
+    "RESET RESET EQUAL EQUAL"
+    ;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+    grid-column-gap: 4px ;
+    grid-row-gap: 10px;
+    padding: 16px 16px 16px 16px;
+    background-color: var(--GrayishRed);
+    border-radius: 12px;
+}
+.key{
+    height: 56px;
+    width: 56px;
+    border-radius: 12px;
+    border-color: transparent;
+    font-family: "League Spartan",sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    text-align: center;
+    background-color: var(--LightGrayishYellow);
+    padding: 8px 0px 0px 0px ;
+    box-shadow: 0px 2.5px 0px 0px var(--DarkGrayishOrange);
+}
+.key:active{
+    background-color: var(--GrayishRed);
+}
+#keySeven{
+    grid-area: SEVEN;
+}
+#keyEight{
+    grid-area: EIGHT;
+}
+#keyNine{
+    grid-area: NINE;
+}
+#keyDel{
+    grid-area: DEL;
+    background-color: var(--DarkModerateCyan);
+    color: var(--White);
+    padding: 4px 0px 0px 4px ;
+    box-shadow: 0px 2.5px 0px 0px var(--VeryDarkCyan);
+}
+#keyFour{
+    grid-area: FOUR;
+}
+#keyFive{
+    grid-area: FIVE;
+}
+#keySix{
+    grid-area: SIX;
+}
+#keyPlus{
+    grid-area: PLUS;
+}
+#keyOne{
+    grid-area: ONE;
+}
+#keyTwo{
+    grid-area: TWO;
+}
+#keyThree{
+    grid-area: THREE;
+}
+#keyMinus{
+    grid-area: MINUS;
+}
+#keyComa{
+    grid-area: COMA;
+}
+#keyZero{
+    grid-area: ZEROO;
+}
+#keyDivide{
+    grid-area: DIVIDE;
+}
+#keyMultiple{
+    grid-area: MULTIPLE;
+}
+#keyReset{
+   grid-area: RESET;
+   grid-column: span 2;
+   background-color: var(--DarkModerateCyan);
+   color: var(--White);
+   width: 125px;
+   box-shadow: 0px 2.5px 0px 0px var(--VeryDarkCyan);
+}
+#keyEqual{
+    grid-area: EQUAL;
+    background-color: var(--Orange);
+    color: var(--White);
+    width: 125px;
+    box-shadow: 0px 2.5px 0px 0px var(--DarkOrange);
+}
+#keyReset:active,#keyDel:active{
+    background-color: var(--VeryDarkCyan);
+}
+#keyEqual:active{
+    background-color: var(--DarkOrange);
+}
+
+@media screen and (min-width: 1080px) {
+    .main{
+        margin: 2% 35% 0px 40% ;
+    }
+}
